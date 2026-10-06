@@ -1,5 +1,7 @@
+import photoLibrary from './photo-library.json';
 export interface TripImage { src: string; alt: string; author?: string; source?: string; license?: string; licenseUrl?: string }
 export const images = {
+  ...photoLibrary,
   obelisco: { src: '/images/obelisco.webp', alt: 'El Obelisco iluminado de noche', author: 'Federico Pinto', source: 'https://commons.wikimedia.org/wiki/File:Obelisco_nocturno.JPG', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/' },
   palermo: { src: '/images/palermo.webp', alt: 'El lago del Rosedal de Palermo', author: 'Dan DeLuca', source: 'https://commons.wikimedia.org/wiki/File:Lago_del_rosedal_palermo_chico.jpg', license: 'CC BY 2.0', licenseUrl: 'https://creativecommons.org/licenses/by/2.0/' },
   rosedal: { src: '/images/rosedal.webp', alt: 'Rosales en el Rosedal de Palermo', author: 'Gobierno de la Ciudad de Buenos Aires', source: 'https://commons.wikimedia.org/wiki/File:8000_rosales_en_El_Rosedal_de_Palermo.jpg', license: 'CC BY 2.5 AR', licenseUrl: 'https://creativecommons.org/licenses/by/2.5/ar/' },

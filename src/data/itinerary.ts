@@ -1,10 +1,11 @@
 import { images, type TripImage } from './images';
+import { lodging } from './lodging';
 
 export type ActivityType = 'walk' | 'food' | 'museum' | 'park' | 'transfer' | 'boat' | 'landmark' | 'shopping';
 export interface Mission { number: string; text: string }
 export interface Activity {
   time: string; title: string; description: string; type: ActivityType;
-  mapUrl: string; image?: TripImage; optional?: boolean; note?: string; mission?: Mission;
+  mapUrl: string; image: TripImage; optional?: boolean; note?: string; mission?: Mission;
 }
 export interface TripDay {
   date: string; fullDate: string; weekday: string; dayNumber: number; zone: string;
@@ -18,17 +19,57 @@ export const categories: Record<ActivityType, { label: string; icon: string }> =
   landmark: { label: 'Imperdible', icon: 'pin' }, shopping: { label: 'Tiendas y cafés', icon: 'bag' },
 };
 export const maps = (query: string) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
-const activity = (time: string, title: string, description: string, type: ActivityType, query: string, extra: Partial<Activity> = {}): Activity => ({ time, title, description, type, mapUrl: maps(query), ...extra });
+const activityPhotos: Record<string, TripImage> = {
+  'Llegada a Buenos Aires': images.diagonal,
+  'Check-in y una pausa': images.diagonal,
+  'Avenida Corrientes y cena': images.corrientes,
+  'Teatro Colón': images.colon,
+  'Galerías Pacífico': images.pacifico,
+  'Plaza San Martín': images.sanMartin,
+  'Almuerzo en Recoleta': images.empanadas,
+  'Plaza Francia y Centro Cultural Recoleta': images.cultural,
+  'Floralis Genérica': images.floralis,
+  'El Ateneo Grand Splendid': images.ateneo,
+  'Cena y regreso al Centro': images.pizza,
+  'Planetario Galileo Galilei': images.planetario,
+  'Jardín Japonés': images.japones,
+  'Almuerzo en Palermo': images.empanadas,
+  'Jardín Botánico Carlos Thays': images.botanico,
+  'Palermo Soho': images.soho,
+  'Plaza Serrano / Plaza Julio Cortázar': images.serrano,
+  'Tiendas, cafés y street art': images.soho,
+  'Una cena para dos': images.pizza,
+  'Rumbo a Tigre': images.retiro,
+  'Llegada a Tigre': images.tigre,
+  'Almuerzo junto al río': images.victorica,
+  'Puerto de Frutos': images.puertoFrutos,
+  'Paseo Victorica': images.victorica,
+  'Museo de Arte Tigre': images.museoTigre,
+  'Regreso a Buenos Aires': images.retiro,
+  'La Bombonera': images.bombonera,
+  'Traslado a San Telmo': images.mercado,
+  'Mercado de San Telmo': images.mercado,
+  'Mafalda y un paseo por San Telmo': images.mafalda,
+  'Plaza de Mayo': images.plazaMayo,
+  'Puerto Madero y Puente de la Mujer': images.puente,
+  'Equipaje y salida al aeropuerto': images.diagonal,
+  'Hasta la próxima, Buenos Aires': images.obelisco,
+};
+const activity = (time: string, title: string, description: string, type: ActivityType, query: string, extra: Partial<Activity> = {}): Activity => {
+  const image = extra.image ?? activityPhotos[title];
+  if (!image) throw new Error(`Falta la fotografía de la actividad: ${title}`);
+  return { time, title, description, type, mapUrl: maps(query), ...extra, image };
+};
 
 export const itinerary: TripDay[] = [
   {
     date: '27 Octubre', fullDate: '2026-10-27', weekday: 'Martes', dayNumber: 1, zone: 'Obelisco / Centro',
     title: 'Hola, Buenos Aires.', emoji: '🌙', coverImage: images.obelisco,
     description: 'Aterrizar, dejar las maletas y encontrarnos con las luces de la ciudad.',
-    note: 'Llegada estimada a las 21:00. El traslado y el check-in mandan: el paseo y la cena se pueden acortar según el cansancio. El punto del hotel es orientativo hasta agregar su dirección.',
+    note: 'Llegada estimada a las 21:00. El traslado y el check-in mandan: el paseo y la cena se pueden acortar según el cansancio. Nos alojamos en Roque Sáenz Peña 1119, piso 9, departamento 923.',
     activities: [
-      activity('21:00', 'Llegada a Buenos Aires', 'Ya estamos aquí. Traslado al alojamiento cerca del Obelisco; aeropuerto por confirmar.', 'transfer', 'Obelisco Buenos Aires'),
-      activity('22:15', 'Check-in y una pausa', 'Dejar las maletas, refrescarnos y salir solo si quedan ganas. Hora orientativa.', 'transfer', 'Obelisco Buenos Aires'),
+      activity('21:00', 'Llegada a Buenos Aires', 'Ya estamos aquí. Traslado a Roque Sáenz Peña 1119; aeropuerto por confirmar.', 'transfer', lodging.mapQuery),
+      activity('22:15', 'Check-in y una pausa', 'Piso 9, departamento 923. Dejar las maletas, refrescarnos y salir solo si quedan ganas. Hora orientativa.', 'transfer', lodging.mapQuery),
       activity('22:45', 'Obelisco de noche', 'Nuestro primer encuentro con la ciudad, bajo las luces de la 9 de Julio.', 'landmark', 'Obelisco Buenos Aires', { image: images.obelisco, optional: true, mission: { number: '01', text: 'Sacarnos nuestra foto favorita frente al Obelisco 📸❤️' } }),
       activity('23:00', 'Avenida Corrientes y cena', 'Un paseo cortito entre marquesinas y una cena cerca del hotel. La primera noche es para ir sin prisa.', 'food', 'Restaurantes Avenida Corrientes Obelisco Buenos Aires', { optional: true }),
     ],
@@ -98,19 +139,20 @@ export const itinerary: TripDay[] = [
       activity('13:30', 'Mafalda y un paseo por San Telmo', 'Una foto con Mafalda y unas cuadras por el barrio.', 'walk', 'Estatua de Mafalda Defensa y Chile Buenos Aires'),
       activity('14:30', 'Plaza de Mayo', 'Casa Rosada, Catedral Metropolitana y Cabildo: un paseo por sus exteriores, sin visitas largas.', 'landmark', 'Plaza de Mayo Buenos Aires'),
       activity('15:30', 'Puerto Madero y Puente de la Mujer', 'Una vuelta breve por los diques, solo si el traslado al aeropuerto ya está resuelto y queda margen.', 'walk', 'Puente de la Mujer Puerto Madero Buenos Aires', { optional: true }),
-      activity('16:30', 'Equipaje y salida al aeropuerto', 'Volver al alojamiento y salir hacia el aeropuerto confirmado. Ajustar antes si el tráfico o la aerolínea lo requieren.', 'transfer', 'Obelisco Buenos Aires', { note: 'Mapa orientativo del área del hotel; reemplazar por su dirección exacta.' }),
+      activity('16:30', 'Equipaje y salida al aeropuerto', 'Volver a Roque Sáenz Peña 1119, piso 9, departamento 923, y salir hacia el aeropuerto confirmado. Ajustar antes si el tráfico o la aerolínea lo requieren.', 'transfer', lodging.mapQuery),
       activity('21:00', 'Hasta la próxima, Buenos Aires', 'Hora estimada del vuelo de regreso. Nuestra aventura se queda con nosotros.', 'transfer', 'Aeropuertos Buenos Aires', { note: 'Aeropuerto y vuelo por confirmar. Este enlace no es una ruta al aeropuerto.', mission: { number: 'final', text: 'Elegir nuestra foto favorita del viaje ❤️' } }),
     ],
   },
 ];
 
-export interface Place { name: string; dayNumber: number; image?: TripImage; mapUrl: string }
-export const places: Place[] = [
-  ['Obelisco', 1, images.obelisco], ['Teatro Colón', 2], ['Galerías Pacífico', 2],
-  ['El Ateneo Grand Splendid', 2], ['Floralis Genérica', 2], ['Bosques de Palermo', 3, images.palermo],
-  ['El Rosedal', 3, images.rosedal], ['Planetario Galileo Galilei', 3], ['Jardín Japonés', 3],
-  ['Jardín Botánico Carlos Thays', 3], ['Palermo Soho', 3], ['Tigre', 4, images.tigre],
-  ['Delta del Tigre', 4, images.tigre], ['Puerto de Frutos', 4], ['Museo de Arte Tigre', 4],
-  ['La Bombonera', 5], ['Caminito', 5, images.caminito], ['San Telmo', 5],
-  ['Plaza de Mayo', 5], ['Puerto Madero', 5], ['Puente de la Mujer', 5],
-].map(([name, dayNumber, image]) => ({ name: name as string, dayNumber: dayNumber as number, image: image as TripImage | undefined, mapUrl: maps(`${name} ${dayNumber === 4 ? 'Tigre Argentina' : 'Buenos Aires'}`) }));
+export interface Place { name: string; dayNumber: number; image: TripImage; mapUrl: string }
+const placeEntries: [string, number, TripImage][] = [
+  ['Obelisco', 1, images.obelisco], ['Teatro Colón', 2, images.colon], ['Galerías Pacífico', 2, images.pacifico],
+  ['El Ateneo Grand Splendid', 2, images.ateneo], ['Floralis Genérica', 2, images.floralis], ['Bosques de Palermo', 3, images.palermo],
+  ['El Rosedal', 3, images.rosedal], ['Planetario Galileo Galilei', 3, images.planetario], ['Jardín Japonés', 3, images.japones],
+  ['Jardín Botánico Carlos Thays', 3, images.botanico], ['Palermo Soho', 3, images.soho], ['Tigre', 4, images.tigre],
+  ['Delta del Tigre', 4, images.tigre], ['Puerto de Frutos', 4, images.puertoFrutos], ['Museo de Arte Tigre', 4, images.museoTigre],
+  ['La Bombonera', 5, images.bombonera], ['Caminito', 5, images.caminito], ['San Telmo', 5, images.mercado],
+  ['Plaza de Mayo', 5, images.plazaMayo], ['Puerto Madero', 5, images.puertoMadero], ['Puente de la Mujer', 5, images.puente],
+];
+export const places: Place[] = placeEntries.map(([name, dayNumber, image]) => ({ name, dayNumber, image, mapUrl: maps(`${name} ${dayNumber === 4 ? 'Tigre Argentina' : 'Buenos Aires'}`) }));

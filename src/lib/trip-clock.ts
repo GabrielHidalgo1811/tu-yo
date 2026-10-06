@@ -1,4 +1,4 @@
-import { trip } from '../data/trip.ts';
+import { tripDates as trip } from '../data/trip-dates.ts';
 
 export function buenosAiresClock(now = new Date()) {
   const parts = new Intl.DateTimeFormat('en-CA', {

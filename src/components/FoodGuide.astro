@@ -1,0 +1,46 @@
+---
+import { restaurants, foodZones } from '../data/food';
+import { maps } from '../data/itinerary';
+import MapButton from './MapButton.astro';
+import Icon from './Icon.astro';
+interface Props { dayNumber?: number }
+const { dayNumber } = Astro.props;
+const zones = dayNumber ? foodZones.filter((zone) => zone.days.includes(dayNumber)) : foodZones;
+const options = restaurants.filter((restaurant) => zones.some((zone) => zone.id === restaurant.zone));
+---
+<section id={dayNumber ? 'comida-del-dia' : 'comida'} class:list={['food-guide', { section: !dayNumber }]}>
+  <div class="section-heading">
+    <div><p class="eyebrow">UNA MESA PARA DOS, SIN GASTAR DE MÁS</p><h2>{dayNumber ? 'Dónde comer hoy.' : 'Buenos Aires también se saborea.'}</h2></div>
+    <p>{options.length} opciones para elegir según el paseo.<br />Pizza, empanadas, parrilla y algo más.</p>
+  </div>
+  <p class="food-intro">Ideas para cuidar el presupuesto: porciones, comida al paso y platos para compartir. Las etiquetas orientan el tipo de pedido; no garantizan un precio bajo. Revisa la carta y los horarios antes de ir.</p>
+  {!dayNumber && <div class="place-filters" aria-label="Filtrar comida por zona">
+    <button class="filter active" type="button" data-food-filter="all" aria-pressed="true">Todas las zonas</button>
+    {zones.map((zone) => <button class="filter" type="button" data-food-filter={zone.id} aria-pressed="false">{zone.label}</button>)}
+  </div>}
+  <div class="food-grid">
+    {options.map((restaurant) => <article class="food-card" data-food-zone={restaurant.zone}>
+      <div class="food-card-top"><Icon name="coffee" /><span>{restaurant.budget}</span></div>
+      <p class="eyebrow">{restaurant.area}</p>
+      <h3>{restaurant.name}</h3>
+      <p class="food-specialty"><strong>La especialidad</strong>{restaurant.specialty}</p>
+      <p>{restaurant.tip}</p>
+      <address>{restaurant.address}</address>
+      <div class="food-links"><MapButton url={maps(`${restaurant.name} ${restaurant.address}`)} label="Ubicar en Google Maps" /><a href={restaurant.sourceUrl} target="_blank" rel="noopener noreferrer">{restaurant.sourceLabel}<span class="sr-only"> (abre en otra pestaña)</span></a></div>
+    </article>)}
+  </div>
+  <p class="section-footnote">Referencias consultadas en octubre de 2026. Los precios y horarios pueden cambiar. En Puerto Madero, podemos pasear y comer antes en San Telmo o al volver al Centro.</p>
+</section>
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-food-filter]').forEach((button) => button.addEventListener('click', () => {
+    const guide = button.closest('.food-guide');
+    if (!guide) return;
+    guide.querySelectorAll<HTMLButtonElement>('[data-food-filter]').forEach((item) => {
+      item.classList.toggle('active', item === button);
+      item.setAttribute('aria-pressed', String(item === button));
+    });
+    guide.querySelectorAll<HTMLElement>('[data-food-zone]').forEach((card) => {
+      card.hidden = button.dataset.foodFilter !== 'all' && card.dataset.foodZone !== button.dataset.foodFilter;
+    });
+  }));
+</script>

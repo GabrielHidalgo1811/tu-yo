@@ -1,0 +1,76 @@
+.lodging-home {
+  max-width: 1280px;
+  margin: 42px auto 0;
+  padding: 0 48px;
+}
+.lodging-card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 30px;
+  background: #eaf0ec;
+  border: 1px solid #cbd7ce;
+  border-radius: 12px;
+}
+.lodging-symbol { color: #6a8276; }
+.lodging-copy { flex: 1; min-width: 0; }
+.lodging-copy .eyebrow { color: #667b6c; font-size: 10px; }
+.lodging-copy h2 { font-size: 27px; line-height: 1.3; margin: 8px 0 14px; }
+.lodging-copy address { font-style: normal; font-size: 15px; line-height: 1.8; }
+.lodging-copy address strong { font-weight: 500; }
+.lodging-copy > p:last-child:not(.eyebrow) { margin-top: 12px; color: #63756c; font-size: 13px; line-height: 1.7; }
+.lodging-actions { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.lodging-actions .map-button { background: #173d49; color: #fff; border-color: #173d49; }
+.lodging-actions > a:last-child { font-size: 12px; text-decoration: underline; text-underline-offset: 4px; padding: 8px 0; }
+.lodging-compact { padding: 22px; margin: 0 0 18px; }
+.lodging-compact h2 { font-size: 23px; }
+.lodging-compact .lodging-symbol { display: none; }
+.day-food-shortcut { margin: 0 0 32px; }
+.food-guide { scroll-margin-top: 100px; }
+.food-guide .section-heading { align-items: start; }
+.food-guide .section-heading h2 { max-width: 650px; }
+.food-guide .section-heading > p { flex-shrink: 1; min-width: 200px; }
+.food-intro { color: #65776c; font-size: 15px; line-height: 1.8; max-width: 800px; margin-bottom: 25px; }
+.food-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.food-card { background: #fffefa; border: 1px solid #dbe0d6; border-radius: 12px; padding: 26px; display: flex; flex-direction: column; min-width: 0; }
+.food-card-top { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 22px; color: #8b754c; }
+.food-card-top > span { border: 1px solid #e3d9c7; border-radius: 20px; padding: 5px 10px; font-size: 11px; color: #7c6749; }
+.food-card .eyebrow { font-size: 10px; color: #6d8070; letter-spacing: 1.4px; }
+.food-card h3 { font-size: 28px; line-height: 1.25; margin: 9px 0 20px; }
+.food-card > p:not(.eyebrow) { font-size: 14px; line-height: 1.85; color: #67766b; }
+.food-specialty { padding-bottom: 17px; margin-bottom: 17px; border-bottom: 1px solid #e5e8df; }
+.food-specialty strong { display: block; color: #264f43; font-size: 12px; font-weight: 600; margin-bottom: 5px; }
+.food-card address { font-size: 12px; font-style: normal; line-height: 1.8; color: #7d806e; padding: 20px 0; }
+.food-links { display: flex; flex-direction: column; gap: 8px; margin-top: auto; }
+.food-links .map-button { width: 100%; font-size: 13px; }
+.food-links > a:last-child { text-align: center; font-size: 12px; text-decoration: underline; text-underline-offset: 4px; padding: 12px 0 3px; }
+.day-page .food-guide { padding: 36px 0; border-top: 1px solid #dbe0d6; margin-top: 15px; }
+.day-page .food-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.day-page .food-guide .section-heading { display: block; }
+.day-page .food-guide .section-heading > p { margin-top: 15px; }
+@media (max-width: 1100px) {
+  .lodging-home { padding-inline: 32px; }
+  .food-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lodging-card { flex-wrap: wrap; }
+  .lodging-actions { flex-basis: 100%; flex-direction: row; flex-wrap: wrap; }
+  .main-nav { gap: 20px; }
+}
+@media (max-width: 760px) {
+  .lodging-home { padding-inline: 22px; margin-top: 28px; }
+  .lodging-card { padding: 23px; gap: 15px; }
+  .lodging-symbol { display: none; }
+  .lodging-copy h2 { font-size: 26px; }
+  .lodging-copy address { font-size: 14px; }
+  .lodging-actions { flex-direction: column; align-items: stretch; text-align: center; gap: 6px; }
+  .lodging-actions .map-button { font-size: 13px; min-height: 50px; }
+  .food-grid, .day-page .food-grid { grid-template-columns: 1fr; }
+  .food-card { padding: 24px; }
+  .food-card > p:not(.eyebrow) { font-size: 15px; }
+  .food-guide .section-heading > p { min-width: 0; }
+  .food-links .map-button { min-height: 50px; font-size: 14px; }
+  .main-nav { gap: 2px; }
+  .main-nav a { min-width: 0; font-size: 10px; }
+  .memory-card > div > .travel-image { min-height: 130px; }
+}
+
+@media (max-width: 760px) { .section-heading > p br { display: initial; } }

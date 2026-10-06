@@ -1,0 +1,202 @@
+{
+  "floralis": {
+    "source": "https://commons.wikimedia.org/wiki/File:Floralis_Gen%C3%A9rica_(27547134408).jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "license": "CC BY 2.0",
+    "author": "Deensel",
+    "alt": "Floralis Genérica",
+    "src": "/images/floralis.webp"
+  },
+  "pizza": {
+    "source": "https://commons.wikimedia.org/wiki/File:Pizzas_Buenos_Aires.png",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5/ar/deed.en",
+    "license": "CC BY 2.5 ar",
+    "author": "GCBA",
+    "alt": "Argentine pizza",
+    "src": "/images/pizza.webp"
+  },
+  "botanico": {
+    "source": "https://commons.wikimedia.org/wiki/File:Buenos_Aires_Entrada_al_Jardin_Botanico_Carlos_Thays.jpg",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Buenos_Aires_Entrada_al_Jardin_Botanico_Carlos_Thays.jpg",
+    "license": "Public domain",
+    "author": "Arcibel",
+    "alt": "Buenos Aires Botanical Garden",
+    "src": "/images/botanico.webp"
+  },
+  "museoTigre": {
+    "source": "https://commons.wikimedia.org/wiki/File:Panorama_Tigre.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "license": "CC BY 2.0",
+    "author": "Luis Argerich from Buenos Aires, Argentina",
+    "alt": "Museo de Arte de Tigre",
+    "src": "/images/museoTigre.webp"
+  },
+  "sanMartin": {
+    "source": "https://commons.wikimedia.org/wiki/File:Plaza_San_Mart%C3%ADn,_Buenos_Aires_(27146002798).jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "license": "CC BY 2.0",
+    "author": "Deensel",
+    "alt": "Plaza San Martín (Buenos Aires)",
+    "src": "/images/sanMartin.webp"
+  },
+  "puertoMadero": {
+    "source": "https://commons.wikimedia.org/wiki/File:Puente_de_la_Mujer_in_2026.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "license": "CC BY 4.0",
+    "author": "Gonzabar77",
+    "alt": "Puerto Madero",
+    "src": "/images/puertoMadero.webp"
+  },
+  "plazaMayo": {
+    "source": "https://commons.wikimedia.org/wiki/File:Vista_a%C3%A9rea_de_Plaza_de_Mayo_03.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "license": "CC BY-SA 4.0",
+    "author": "ProtoplasmaKid",
+    "alt": "Plaza de Mayo",
+    "src": "/images/plazaMayo.webp"
+  },
+  "planetario": {
+    "source": "https://commons.wikimedia.org/wiki/File:Vista_a%C3%A9rea_del_Planetario_Galileo_Galilei_06.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "license": "CC BY-SA 4.0",
+    "author": "ProtoplasmaKid",
+    "alt": "Galileo Galilei Planetarium",
+    "src": "/images/planetario.webp"
+  },
+  "retiro": {
+    "source": "https://commons.wikimedia.org/wiki/File:RETIRO_aerea.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "license": "CC BY-SA 3.0",
+    "author": "Silvinarossello",
+    "alt": "Retiro railway station",
+    "src": "/images/retiro.webp"
+  },
+  "japones": {
+    "source": "https://commons.wikimedia.org/wiki/File:Buenos_Aires_-_Jard%C3%ADn_Japon%C3%A9s_-_200806a.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "license": "CC BY 2.0",
+    "author": "Luis Argerich from Buenos Aires, Argentina",
+    "alt": "Jardín japonés de Buenos Aires",
+    "src": "/images/japones.webp"
+  },
+  "colon": {
+    "source": "https://commons.wikimedia.org/wiki/File:Fachada_del_Teatro_Col%C3%B3n_en_Buenos_Aires,_Argentina.jpg",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "license": "CC0",
+    "author": "EEJCC",
+    "alt": "Teatro Colón",
+    "src": "/images/colon.webp"
+  },
+  "mercado": {
+    "source": "https://commons.wikimedia.org/wiki/File:Mercado_San_Telmo.JPG",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Mercado_San_Telmo.JPG",
+    "license": "Public domain",
+    "author": "Elsapucai",
+    "alt": "Mercado San Telmo",
+    "src": "/images/mercado.webp"
+  },
+  "empanadas": {
+    "source": "https://commons.wikimedia.org/wiki/File:Tapa_de_empanadillitas.JPG",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "license": "CC BY 3.0",
+    "author": "Tamorlan",
+    "alt": "Empanada",
+    "src": "/images/empanadas.webp"
+  },
+  "cultural": {
+    "source": "https://commons.wikimedia.org/wiki/File:Centro_Cultural_Recoleta_2012.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "license": "CC BY 2.0",
+    "author": "Gobierno de la Ciudad de Buenos Aires",
+    "alt": "Centro Cultural Recoleta",
+    "src": "/images/cultural.webp"
+  },
+  "pacifico": {
+    "source": "https://commons.wikimedia.org/wiki/File:Galerias_DSC-0514.JPG",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "license": "CC BY-SA 3.0",
+    "author": "Silvinarossello",
+    "alt": "Galerías Pacífico",
+    "src": "/images/pacifico.webp"
+  },
+  "bombonera": {
+    "source": "https://commons.wikimedia.org/wiki/File:Vista_a%C3%A9rea_del_Estadio_Alberto_J._Armando_%22La_Bombonera%22_01.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "license": "CC BY-SA 4.0",
+    "author": "ProtoplasmaKid",
+    "alt": "La Bombonera",
+    "src": "/images/bombonera.webp"
+  },
+  "ateneo": {
+    "source": "https://commons.wikimedia.org/wiki/File:Yenny_Ateneo_Grand_Splendid.jpg",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "license": "CC BY-SA 3.0",
+    "author": "Roberto Fiadone",
+    "alt": "El Ateneo Grand Splendid",
+    "src": "/images/ateneo.webp"
+  },
+  "puente": {
+    "source": "https://commons.wikimedia.org/wiki/File:Puente_de_la_Mujer,_Puerto_Madero,_Buenos_Aires,_Argentina,_29th._Dec._2010_-_Flickr_-_PhillipC_(1).jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "license": "CC BY 2.0",
+    "author": "Phillip Capper from Wellington, New Zealand",
+    "alt": "Puente de la Mujer",
+    "src": "/images/puente.webp"
+  },
+  "diagonal": {
+    "source": "https://commons.wikimedia.org/wiki/File:Diagonal_Norte_drone.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "license": "CC BY 2.0",
+    "author": "Deensel",
+    "alt": "Avenida Roque Sáenz Peña",
+    "src": "/images/diagonal.webp"
+  },
+  "puertoFrutos": {
+    "source": "https://commons.wikimedia.org/wiki/File:Mercado_de_Los_frutos,_Tigre_2023.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "license": "CC BY-SA 4.0",
+    "author": "ElGuruCesar",
+    "alt": "Puerto de Frutos, Tigre",
+    "src": "/images/puertoFrutos.webp"
+  },
+  "victorica": {
+    "source": "https://commons.wikimedia.org/wiki/File:Paseo_Victorica_-_Tigre_-_panoramio.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "license": "CC BY 3.0",
+    "author": "bullit",
+    "alt": "Paseo Victorica, Tigre",
+    "src": "/images/victorica.webp"
+  },
+  "soho": {
+    "source": "https://commons.wikimedia.org/wiki/File:Calle_borges_-_plaza_serrano_-_palermo_soho_-_panoramio.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "license": "CC BY 3.0",
+    "author": "Gervacio Rosales",
+    "alt": "Calle Borges, Palermo Soho",
+    "src": "/images/soho.webp"
+  },
+  "serrano": {
+    "source": "https://commons.wikimedia.org/wiki/File:Buenos_Aires_-_Plazoleta_Julio_Cortazar.jpg",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "license": "CC BY 4.0",
+    "author": "P. Hughes",
+    "alt": "Plaza Julio Cortázar, Palermo",
+    "src": "/images/serrano.webp"
+  },
+  "corrientes": {
+    "source": "https://commons.wikimedia.org/wiki/File:Avenida_Corrientes_y_Callao.jpg",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "license": "CC BY-SA 3.0",
+    "author": "Roberto Fiadone",
+    "alt": "Avenida Corrientes",
+    "src": "/images/corrientes.webp"
+  },
+  "mafalda": {
+    "alt": "Mafalda y sus amigos en San Telmo",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B0%D1%84%D0%B0%D0%BB%D1%8C%D0%B4%D0%B0_%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D0%BD%D0%B8%D0%BA.jpg",
+    "author": "Lucien Semenovitch",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "src": "/images/mafalda.webp"
+  }
+}

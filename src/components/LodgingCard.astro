@@ -1,0 +1,20 @@
+---
+import { lodging, lodgingMapUrl, lodgingDirectionsUrl } from '../data/lodging';
+import MapButton from './MapButton.astro';
+import Icon from './Icon.astro';
+interface Props { compact?: boolean }
+const { compact = false } = Astro.props;
+---
+<aside class:list={['lodging-card', { 'lodging-compact': compact }]} aria-label="Nuestro alojamiento">
+  <div class="lodging-symbol"><Icon name="home" size={28} /></div>
+  <div class="lodging-copy">
+    <p class="eyebrow">NUESTRA BASE · DIAGONAL NORTE</p>
+    <h2>{lodging.name}</h2>
+    <address>{lodging.street}<br /><strong>{lodging.unit}</strong><br />{lodging.city}</address>
+    {!compact && <p>A un paseo del Obelisco. Guardemos este punto para volver después de cada aventura.</p>}
+  </div>
+  <div class="lodging-actions">
+    <MapButton url={lodgingDirectionsUrl} label="Cómo llegar al alojamiento" />
+    <a href={lodgingMapUrl} target="_blank" rel="noopener noreferrer">Ver la dirección en Google Maps</a>
+  </div>
+</aside>

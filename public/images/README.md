@@ -6,6 +6,6 @@ No se referencian archivos locales inexistentes. `TravelImage.astro` reserva el 
 
 Para un lugar nuevo, agrega un objeto `TripImage` en `src/data/images.ts` y asígnalo a su actividad o entrada en `places`. Usa fotos optimizadas en WebP o JPEG y conserva los créditos que correspondan.
 
-Los espacios de Recuerdos son intencionadamente vacíos, sin botones de subida. Para agregar fotos propias, agrega `image: { src: '/images/nuestra-foto.webp', alt: 'Descripción de la foto' }` al recuerdo en `src/data/trip.ts`; no necesitas editar componentes. No hay almacenamiento ni backend.
+Recuerdos muestra postales de referencia, sin botones de subida. Para agregar fotos propias, reemplaza `image` por `{ src: '/images/nuestra-foto.webp', alt: 'Descripción de la foto' }` en `src/data/trip.ts`; no necesitas editar componentes. No hay almacenamiento ni backend.
 
-Las seis fotos de referencia se sirven localmente en WebP. Los originales descargados quedan en `.source-images/`, fuera de Git y de la web. El script puntual `scripts/optimize-images.mjs` permite repetir su conversión con Sharp (incluido por Astro) si están presentes los originales.
+Las 31 fotos se sirven localmente en WebP. Los originales descargados quedan en `.source-images/`, fuera de Git y de la web. Los scripts puntuales `scripts/optimize-images.mjs` y `scripts/import-photo-library.mjs` permiten repetir la conversión con Sharp (incluido por Astro) si están presentes los originales y su metadata. Las imágenes nuevas y sus licencias están registradas en `src/data/photo-library.json`. Para validar todos los archivos, ejecutar `npm run build` y `npm run check:images`.
