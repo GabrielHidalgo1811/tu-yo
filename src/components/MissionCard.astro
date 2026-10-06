@@ -1,0 +1,7 @@
+---
+import type { Mission } from '../data/itinerary';
+import Icon from './Icon.astro';
+interface Props { mission: Mission }
+const { mission } = Astro.props;
+---
+<aside class="mission-card"><span class="mission-icon"><Icon name="heart" size={24} /></span><div><p class="eyebrow">MISIÓN {mission.number === 'final' ? 'FINAL' : `#${mission.number}`}</p><p>{mission.text}</p></div></aside>

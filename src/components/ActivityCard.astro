@@ -1,0 +1,10 @@
+---
+import { categories, type Activity } from '../data/itinerary';
+import TravelImage from './TravelImage.astro';
+import MapButton from './MapButton.astro';
+import Icon from './Icon.astro';
+interface Props { activity: Activity }
+const { activity } = Astro.props;
+const category = categories[activity.type];
+---
+<article class="activity-card"><TravelImage image={activity.image} label={activity.title} /><div class="activity-content"><span class="category"><Icon name={category.icon} size={16} />{category.label}{activity.optional && <span class="optional">Opcional</span>}</span><h3>{activity.title}</h3><p>{activity.description}</p>{activity.note && <p class="activity-note">{activity.note}</p>}<MapButton url={activity.mapUrl} /></div></article>

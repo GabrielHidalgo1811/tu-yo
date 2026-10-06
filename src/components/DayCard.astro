@@ -1,0 +1,8 @@
+---
+import type { TripDay } from '../data/itinerary';
+import TravelImage from './TravelImage.astro';
+import Icon from './Icon.astro';
+interface Props { day: TripDay }
+const { day } = Astro.props;
+---
+<a href={`/dias/${day.fullDate}/`} class="day-card reveal"><div class="day-photo"><TravelImage image={day.coverImage} /><span class="day-date"><strong>{day.fullDate.slice(-2)}</strong>OCT</span><span class="day-number">DÍA 0{day.dayNumber}</span></div><div class="day-body"><p class="eyebrow">{day.zone} <span>{day.emoji}</span></p><h3>{day.title}</h3><p>{day.description}</p><div class="day-card-footer"><span>{day.weekday} · {day.activities.length} paradas</span><span class="open-day">Explorar el día <Icon name="plus" size={16} /></span></div></div></a>

@@ -1,0 +1,9 @@
+---
+import Icon from './Icon.astro';
+---
+<div class="countdown"><Icon name="calendar" size={17} /><span data-countdown>27 — 31 de octubre · Nuestra próxima aventura</span></div>
+<script>
+  import { tripStatus } from '../lib/trip-clock';
+  const update = () => document.querySelectorAll('[data-countdown]').forEach((el) => { el.textContent = tripStatus().message; });
+  update(); setInterval(update, 60_000);
+</script>

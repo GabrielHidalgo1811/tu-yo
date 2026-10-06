@@ -1,0 +1,8 @@
+---
+import type { TripDay } from '../data/itinerary';
+import ActivityCard from './ActivityCard.astro';
+import MissionCard from './MissionCard.astro';
+interface Props { day: TripDay }
+const { day } = Astro.props;
+---
+<ol class="timeline">{day.activities.map((activity, index) => <li id={`parada-${index + 1}`} class="timeline-item reveal"><div class="timeline-time"><time datetime={`${day.fullDate}T${activity.time}:00-03:00`}>{activity.time}</time><span></span></div><div><ActivityCard activity={activity} />{activity.mission && <MissionCard mission={activity.mission} />}</div></li>)}</ol>

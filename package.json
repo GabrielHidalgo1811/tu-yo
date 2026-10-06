@@ -1,0 +1,21 @@
+{
+  "name": "buenos-aires-tu-y-yo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1",
+    "typecheck": "astro check",
+    "test": "node --experimental-strip-types --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.6.4",
+    "astro": "^7.3.5",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3"
+  }
+}

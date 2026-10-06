@@ -1,0 +1,12 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { itinerary, type TripDay } from '../../data/itinerary';
+import TravelImage from '../../components/TravelImage.astro';
+import Timeline from '../../components/Timeline.astro';
+import Icon from '../../components/Icon.astro';
+export function getStaticPaths() { return itinerary.map((day) => ({ params: { date: day.fullDate }, props: { day } })); }
+interface Props { day: TripDay }
+const { day } = Astro.props;
+const nextDay = itinerary[day.dayNumber];
+---
+<Layout title={`${day.date} · ${day.zone} · Tú & yo`} description={day.description}><section class="day-hero"><TravelImage image={day.coverImage} eager /><div class="hero-shade"></div><div class="day-hero-content"><a class="back-link" href="/#itinerario">Todos nuestros días</a><p class="eyebrow">DÍA 0{day.dayNumber} · {day.weekday} {day.date} 2026</p><h1>{day.title}</h1><p>{day.description}</p><span><Icon name="pin" size={17} />{day.zone}</span></div></section><div class="day-page"><nav class="day-tabs" aria-label="Cambiar día">{itinerary.map((item) => <a href={`/dias/${item.fullDate}/`} aria-current={item.dayNumber === day.dayNumber ? 'page' : undefined}><span>{item.weekday.slice(0, 3)}</span><strong>{item.fullDate.slice(-2)}</strong></a>)}</nav><aside class="day-note"><Icon name="clock" size={24} /><div><strong>Un plan flexible, a nuestro ritmo.</strong><p>{day.note}</p><small>Hora local de Buenos Aires · UTC−3</small></div></aside><Timeline day={day} /><div class="next-day">{nextDay ? <a class="button button-dark" href={`/dias/${nextDay.fullDate}/`}>Próximo día: {nextDay.zone}</a> : <a class="button button-dark" href="/#recuerdos">Guardar esta aventura en nuestros recuerdos <Icon name="heart" size={18} /></a>}</div></div></Layout>

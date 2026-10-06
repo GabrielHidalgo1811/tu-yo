@@ -1,0 +1,9 @@
+export interface TripImage { src: string; alt: string; author?: string; source?: string; license?: string; licenseUrl?: string }
+export const images = {
+  obelisco: { src: '/images/obelisco.webp', alt: 'El Obelisco iluminado de noche', author: 'Federico Pinto', source: 'https://commons.wikimedia.org/wiki/File:Obelisco_nocturno.JPG', license: 'CC BY-SA 3.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/' },
+  palermo: { src: '/images/palermo.webp', alt: 'El lago del Rosedal de Palermo', author: 'Dan DeLuca', source: 'https://commons.wikimedia.org/wiki/File:Lago_del_rosedal_palermo_chico.jpg', license: 'CC BY 2.0', licenseUrl: 'https://creativecommons.org/licenses/by/2.0/' },
+  rosedal: { src: '/images/rosedal.webp', alt: 'Rosales en el Rosedal de Palermo', author: 'Gobierno de la Ciudad de Buenos Aires', source: 'https://commons.wikimedia.org/wiki/File:8000_rosales_en_El_Rosedal_de_Palermo.jpg', license: 'CC BY 2.5 AR', licenseUrl: 'https://creativecommons.org/licenses/by/2.5/ar/' },
+  tigre: { src: '/images/tigre.webp', alt: 'Casas y embarcaciones a orillas del Delta del Tigre', author: 'Mauro Cacciola', source: 'https://commons.wikimedia.org/wiki/File:Tigre_delta.jpg', license: 'CC BY 2.0', licenseUrl: 'https://creativecommons.org/licenses/by/2.0/' },
+  caminito: { src: '/images/caminito.webp', alt: 'Fachadas de colores en Caminito', author: 'JOPARA', source: 'https://commons.wikimedia.org/wiki/File:Caminito_Buenos_Aires_Argentina.jpg', license: 'CC BY-SA 2.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/2.0/' },
+  recoleta: { src: '/images/recoleta.webp', alt: 'Arquitectura del Cementerio de la Recoleta', author: 'Eugenio Hansen, OFS', source: 'https://commons.wikimedia.org/wiki/File:Recoleta_Cemetery_.jpg', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/' },
+} satisfies Record<string, TripImage>;

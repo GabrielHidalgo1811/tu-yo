@@ -1,0 +1,13 @@
+---
+import { trip } from '../data/trip';
+import { images } from '../data/images';
+import TravelImage from './TravelImage.astro';
+import TripCountdown from './TripCountdown.astro';
+import Icon from './Icon.astro';
+---
+<section id="inicio" class="hero" aria-label={trip.title}>
+  <TravelImage image={images.obelisco} eager class="hero-image" />
+  <div class="hero-shade"></div>
+  <div class="hero-content"><p class="eyebrow hero-eyebrow">UN VIAJE. DOS PERSONAS. MUCHAS HISTORIAS.</p><h1>Buenos Aires,<br /><em>tú & yo.</em><span class="hero-heart" aria-hidden="true">♡</span></h1><p class="hero-date">{trip.subtitle} <span>🇦🇷</span></p><p class="hero-description">{trip.description}</p><a class="button button-light" href="#itinerario">Ver nuestra aventura <Icon name="sparkle" size={18} /></a><TripCountdown /></div>
+  <div class="hero-bottom"><span>34°36′ S &nbsp; 58°22′ O</span><span>NUESTRO PEQUEÑO DIARIO DE VIAJE</span><span>HECHO PARA NOSOTROS <Icon name="heart" size={14} /></span></div>
+</section>

@@ -1,0 +1,8 @@
+---
+import type { Place } from '../data/itinerary';
+import TravelImage from './TravelImage.astro';
+import Icon from './Icon.astro';
+interface Props { place: Place }
+const { place } = Astro.props;
+---
+<a class="place-card" href={place.mapUrl} target="_blank" rel="noopener noreferrer"><TravelImage image={place.image} label={place.name} /><div><span class="eyebrow">DÍA 0{place.dayNumber}</span><h3>{place.name}</h3><span class="place-map"><Icon name="pin" size={16} /> Google Maps<span class="sr-only"> (abre en otra pestaña)</span></span></div></a>

@@ -1,0 +1,6 @@
+---
+import Icon from './Icon.astro';
+interface Props { url: string; label?: string; compact?: boolean }
+const { url, label = 'Ver en Google Maps', compact = false } = Astro.props;
+---
+<a href={url} target="_blank" rel="noopener noreferrer" class:list={['map-button', { compact }]}><Icon name="pin" size={17} /><span>{label}</span><span class="sr-only"> (abre en otra pestaña)</span></a>

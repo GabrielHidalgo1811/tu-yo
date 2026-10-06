@@ -1,0 +1,5 @@
+---
+import Icon from './Icon.astro';
+const links = [ ['Inicio', 'inicio', 'home'], ['Itinerario', 'itinerario', 'calendar'], ['Mapa', 'mapa', 'map'], ['Lugares', 'lugares', 'pin'], ['Recuerdos', 'recuerdos', 'camera'] ];
+---
+<header class="site-header"><a class="wordmark" href="/#inicio" aria-label="Buenos Aires, tú y yo. Inicio">ba<span>·</span> <em>tú & yo</em></a><nav class="main-nav" aria-label="Navegación principal">{links.map(([label, id, icon]) => <a href={`/#${id}`} data-section={id}><Icon name={icon!} size={19} /><span>{label}</span></a>)}</nav><span class="header-date">27 — 31 OCT <span>2026</span><Icon name="heart" size={17} /></span></header>

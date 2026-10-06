@@ -1,0 +1,10 @@
+---
+import type { TripImage } from '../data/images';
+import Icon from './Icon.astro';
+interface Props { image?: TripImage; label?: string; eager?: boolean; class?: string }
+const { image, label = 'Una postal por descubrir', eager = false, class: className = '' } = Astro.props;
+---
+<div class:list={['travel-image', className]}>
+  <div class="image-fallback" aria-hidden={image ? 'true' : undefined}><Icon name="camera" size={30} /><span>{image?.alt ?? label}</span>{label !== 'Una postal por descubrir' && <small>Una postal por descubrir</small>}</div>
+  {image && <img src={image.src} alt={image.alt} loading={eager ? 'eager' : 'lazy'} decoding="async" fetchpriority={eager ? 'high' : 'auto'} width="1200" height="800" onerror="this.setAttribute('hidden', '')" />}
+</div>
